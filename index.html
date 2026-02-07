@@ -1,17 +1,67 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    span.s1 {font-kerning: none}
-  </style>
+    <style>
+    
+    html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent scroll */
+}
+
+/* Fullscreen container */
+.slideshow {
+    position: fixed;
+    inset: 0; /* top:0; left:0; right:0; bottom:0 */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* All slides stacked and covering screen */
+.slideshow .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    opacity: 0;
+    animation: fadeAnimation 18s infinite;
+}
+
+/* Animation delays for each of 3 images */
+.slideshow .slide:nth-child(1) {
+    animation-delay: 0s;
+}
+.slideshow .slide:nth-child(2) {
+    animation-delay: 6s;
+}
+.slideshow .slide:nth-child(3) {
+    animation-delay: 12s;
+}
+
+/* Fade animation */
+@keyframes fadeAnimation {
+    0%   { opacity: 0; }
+    10%  { opacity: 1; }
+    30%  { opacity: 1; }
+    40%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+    </style>
 </head>
+
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt; &lt;html lang="sk"&gt; &lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;meta name="viewport"content="width=device-width, initial-scale=1.0"&gt; &lt;title&gt;Slideshow&lt;/title&gt; &lt;style&gt; html, body { margin: 0; padding: 0;height: 100%; background-color: #000; /* Čierne pozadie kým sa načítajú fotky */ overflow: hidden; } .slideshow {position: fixed; inset: 0; width: 100vw; height: 100vh; overflow: hidden; } .slideshow .slide { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; animation: fadeAnimation 18s infinite; } /* Oneskorenia */ .slideshow.slide:nth-child(1) { animation-delay: 0s; } .slideshow .slide:nth-child(2) { animation-delay: 6s; } .slideshow .slide:nth-child(3) { animation-delay: 12s; } @keyframes fadeAnimation { 0% { opacity: 0; } 10% { opacity: 1; } 30% { opacity: 1; } 40% { opacity: 0; } 100% { opacity: 0; } } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;main class="slideshow"&gt; &lt;imgsrc="https://exalogic-s-r-o.github.io/SmartDisplaySampleReklama/example1/img/image1.png" class="slide" alt="Slide 1"&gt; &lt;img src="https://exalogic-s-r-o.github.io/SmartDisplaySampleReklama/example1/img/image2.png" class="slide"alt="Slide 2"&gt; &lt;img src="https://exalogic-s-r-o.github.io/SmartDisplaySampleReklama/example1/img/image3.png"class="slide" alt="Slide 3"&gt; &lt;/main&gt; &lt;/body&gt; &lt;/html&gt;</span></p>
+
+<div class="slideshow">
+    <img src="1.jpg" class="slide">
+    <img src="https://exalogic-s-r-o.github.io/SmartDisplaySampleReklama/example1/img/image2.png" class="slide">
+    <img src="https://exalogic-s-r-o.github.io/SmartDisplaySampleReklama/example1/img/image3.png" class="slide">
+</div>
+
 </body>
-</html>
+
+</html> 
